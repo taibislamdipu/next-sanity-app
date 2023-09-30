@@ -8,7 +8,6 @@ const config = defineConfig({
 
   projectId: "bydsnjku",
   dataset: "production",
-
   apiVersion: "2023-09-30",
 
   basePath: "/admin",
