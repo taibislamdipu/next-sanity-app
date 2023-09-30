@@ -5,7 +5,6 @@ export default async function Home() {
 
   return (
     <div>
-      My projects go here
       {projects.map((project) => {
         return (
           <div key={project._id}>
