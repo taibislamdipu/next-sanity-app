@@ -9,7 +9,7 @@ export default async function Home() {
       {projects.map((project) => {
         return (
           <div key={project._id}>
-            <h1>Title: {project.name}</h1>
+            <h1 className="text-3xl">Title: {project.name}</h1>
           </div>
         );
       })}
