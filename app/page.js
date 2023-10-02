@@ -4,6 +4,8 @@ import Image from "next/image";
 export default async function Home() {
   const projects = await getProjects();
 
+  console.log("projects--->", projects);
+
   return (
     <div className="max-w-5xl mx-auto px-4">
       <div className="my-24">
@@ -35,7 +37,7 @@ export default async function Home() {
                     alt="pic"
                   />
                 )}
-                <h1 className="text-base">Title: {project.name}</h1>
+                <h1 className="text-base mt-2">Title: {project.name}</h1>
               </div>
             );
           })}
