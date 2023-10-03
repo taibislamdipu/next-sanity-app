@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.9",
     "next": "latest",
+    "next-nprogress-bar": "^2.1.2",
     "next-sanity": "^5.5.4",
     "react": "latest",
     "react-dom": "latest",

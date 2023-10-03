@@ -1,15 +1,20 @@
 import { getProject } from "@/sanity/sanity-utils";
+import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
 export default async function Project({ params }) {
   const slug = params.project;
 
   const project = await getProject(slug);
 
-  const { name, image, url } = project;
+  const { name, image, url, content } = project;
+
+  // console.log("project--->", project);
+  // console.log("content--->", content);
 
   return (
     <div className="max-w-3xl mx-auto py-20">
-      <div className="flex justify-between items-center">
+      <header className="flex justify-between items-center">
         <h1 className="bg-gradient-to-r font-extrabold text-5xl drop-shadow from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           {name}
         </h1>
@@ -20,7 +25,21 @@ export default async function Project({ params }) {
         >
           View Project
         </a>
+      </header>
+
+      {/* content */}
+      <div className="mt-4 text-gray-500 text-lg space-y-4">
+        <PortableText value={content} />
       </div>
+
+      {/* image */}
+      <Image
+        src={image}
+        alt="image"
+        width={250}
+        height={300}
+        className="mt-10"
+      />
     </div>
   );
 }
